@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     EditText srch;
     TextView txtview,temp,hty,mintmp,mxtemp,sr,ss;
-    String key = "b74fb498267b52e414def66dd4303fb1";
+    String key = "your Api_key Here";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
          ss= findViewById(R.id.sunset);
         }
         public void get(View v){
-            String key = "b74fb498267b52e414def66dd4303fb1";
             String city = srch.getText().toString();
-            String url= "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=b74fb498267b52e414def66dd4303fb1";
+            String url= "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+key;
             RequestQueue queue= Volley.newRequestQueue(getApplicationContext());
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                 @Override
